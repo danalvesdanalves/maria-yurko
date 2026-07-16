@@ -4,7 +4,6 @@
   --text: #000;
   --input-height: 44px;
   --input-width: 240px;
-  --input-width-active: 280px;
   --radius: 2px;
 }
 
@@ -54,10 +53,6 @@ main {
   border-radius: var(--radius);
   width: var(--input-width);
   height: var(--input-height);
-  transition:
-    width 0.35s cubic-bezier(0.4, 0.0, 0.2, 1),
-    height 0.35s cubic-bezier(0.4, 0.0, 0.2, 1),
-    background 0.35s ease;
   overflow: hidden;
   cursor: text;
 }
@@ -164,17 +159,9 @@ main {
   pointer-events: none;
 }
 
-/* Expand slightly when interactive */
-.capture[data-state="editing"],
-.capture[data-state="ready"],
-.capture[data-state="submitted"] {
-  width: var(--input-width-active);
-}
-
 @media (max-width: 380px) {
   :root {
     --input-width: 220px;
-    --input-width-active: 260px;
   }
 }
 
