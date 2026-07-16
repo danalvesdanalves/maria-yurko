@@ -13,12 +13,23 @@
 </head>
 <body>
   <main>
-    <form id="capture" class="capture" data-state="idle" novalidate>
+    <form
+      id="capture"
+      class="capture"
+      data-state="idle"
+      method="post"
+      action="https://df3e60-5.myshopify.com/contact#newsletter"
+      accept-charset="UTF-8"
+      novalidate
+    >
+      <input type="hidden" name="form_type" value="customer" />
+      <input type="hidden" name="utf8" value="✓" />
+      <input type="hidden" name="contact[tags]" value="newsletter" />
       <label for="email" class="visually-hidden">Email address</label>
       <input
         type="email"
         id="email"
-        name="email"
+        name="contact[email]"
         class="email-input"
         placeholder="Enter your email address"
         autocomplete="email"

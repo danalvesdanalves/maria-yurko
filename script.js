@@ -33,9 +33,18 @@ input.addEventListener('focus', () => {
 input.addEventListener('blur', updateReadiness);
 input.addEventListener('input', updateReadiness);
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (form.dataset.state !== 'ready') return;
-  setState('submitted');
   input.blur();
+  try {
+    await fetch(form.action, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new FormData(form),
+    });
+  } catch (_) {
+    // no-cors returns opaque; only real network errors reach here
+  }
+  setState('submitted');
 });
