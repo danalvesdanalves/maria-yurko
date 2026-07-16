@@ -96,16 +96,15 @@ main {
 /* Submit button — hidden until user has typed something valid */
 .submit-btn {
   position: absolute;
-  right: 4px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%) scale(0.6);
-  width: 36px;
-  height: 36px;
+  width: 20px;
+  height: 20px;
   padding: 0;
   border: 0;
-  border-radius: 2px;
-  background: var(--text);
-  color: var(--bg);
+  background: transparent;
+  color: var(--text);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -126,7 +125,7 @@ main {
 
 .capture[data-state="ready"] .email-input,
 .capture[data-state="submitted"] .email-input {
-  padding-right: 48px;
+  padding-right: 40px;
 }
 
 /* Icons */
@@ -151,7 +150,6 @@ main {
 }
 
 .capture[data-state="submitted"] .submit-btn {
-  background: #1a7f37;
   cursor: default;
 }
 
